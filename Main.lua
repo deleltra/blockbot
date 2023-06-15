@@ -69,7 +69,7 @@ end
 --=[ Internal Functions ]=--
 function HookPlayerChat(Player)
     if Player ~= Services.Players.LocalPlayer then
-        getgenv().BlockateBot_Settings.PermissionLevels[Player.UserId] = 1
+        getgenv().BlockateBot_Settings.PermissionLevels[Player.UserId] = 0
     end
     local PlayerChatted_Connection = Player.Chatted:Connect(function(Message)
         if Message:sub(1, #getgenv().BlockateBot_Settings.Commands_Prefix) ~= getgenv().BlockateBot_Settings.Commands_Prefix then return end
